@@ -17,13 +17,22 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <View
+        style={{
+          height: 50,
+          backgroundColor: '#6e3b6e'
+        }}
+      >
+        <Text style={{color: 'white', fontSize: 32, fontWeight: 'bold', paddingVertical: 5, paddingLeft: 10}}>Costumer</Text>
+      </View>
         <ScrollView style={styles.scroll}>
+        
         {
           data.map((item) => (
             <View style={styles.box} key={item.id}>
                 <Image
-                  source={item.picture.large}
-                  style={{width: 50, height: 50, flexDirection: 'row'}}
+                  source={item.picture.thumbnail}
+                  style={{width: 30, height: 30}}
                 />
                 <Text style={styles.title}>{item.name.title} {item.name.first} {item.name.last}</Text>
                 <Text>{item.location.street.number} {item.location.street.name}, {item.location.city}, {item.location.country}</Text>
